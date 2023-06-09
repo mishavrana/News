@@ -17,12 +17,17 @@ struct DatePickerView: View {
     
     var body: some View {
         NavigationView {
-            VStack {
-                DatePicker("From: ", selection: $fromDate, displayedComponents: [.date])
-                DatePicker("To: ", selection: $toDate, displayedComponents: [.date])
+            Form {
+                Section {
+                    DatePicker("From: ", selection: $fromDate, displayedComponents: [.date])
+                }
+                Section {
+                    DatePicker("To: ", selection: $toDate, displayedComponents: [.date])
+                }
+                .navigationTitle("Choose date interval: ")
+                .navigationBarTitleDisplayMode(.inline)
+                .navigationBarItems(leading: cancel, trailing: done)
             }
-            .navigationTitle("Choose date interval: ")
-            .navigationBarItems(leading: cancel, trailing: done)
         }
     }
     var cancel: some View {

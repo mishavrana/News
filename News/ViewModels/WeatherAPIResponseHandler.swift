@@ -14,7 +14,7 @@ class WeatherAPIResponseHandler: ObservableObject {
     
     var myPrivateAPIKey: String = ""
     var articles: [Article] = []
-    var sortedBy: String = ""
+    var sortedBy: String = "publishedAt"
     var query: String = ""
     var fromDate: String = ""
     var toDate: String = ""
@@ -92,6 +92,7 @@ class WeatherAPIResponseHandler: ObservableObject {
     }
     
     func reset() {
+        sortedBy = "publishedAt"
         query = ""
         fromDate = ""
         toDate = ""

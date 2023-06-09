@@ -33,9 +33,10 @@ struct SortPickerView: View {
                             Text(sortOptionsForUser[index])
                                 .tag(sortOptionsForAPI[index])
                         }
-                    }).pickerStyle(MenuPickerStyle())
+                }).pickerStyle(MenuPickerStyle())
             }
             .navigationBarTitle("Filter news")
+            .navigationBarTitleDisplayMode(.inline)
             .navigationBarItems(leading: cancel, trailing: done)
         }
     }
